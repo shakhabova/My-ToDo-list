@@ -16,6 +16,12 @@ form.addEventListener('submit', (e) => {
   localStorage.setItem('list', JSON.stringify(arr));
 });
 
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
 document.addEventListener('DOMContentLoaded', () => {
   arr = JSON.parse(localStorage.getItem('list'));
   for (let i = 0; i < arr.length; i++) {
